@@ -30,7 +30,7 @@ switch uf.dim
     otherwise
         error('dim is out of bounds')
 end
-dims = ones(uf.dim, 1);
+dims = ones(1, uf.dim + 1); % Add trailing 1 to prevent repmat quirk in 1d
 dims(dim) = size(uf.f, dim);
 uf.f = repmat(slice, dims);
 
