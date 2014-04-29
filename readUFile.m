@@ -80,8 +80,10 @@ if uf.dim > 0
     if uf.dim > 2
         uf.z = fscanf(fid, '%f', uf.nz);
         dims = [dims uf.nz];
+        uf.f = reshape(fscanf(fid, '%f', prod(dims)), dims);
+    else
+        uf.f = fscanf(fid, '%f', dims);
     end
-    uf.f = fscanf(fid, '%f', dims);
     fgets(fid);
     
 end
