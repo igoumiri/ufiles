@@ -16,7 +16,7 @@ fprintf(fid, ' %3d                           ;-NUMBER OF ASSOCIATED SCALAR QUANT
 
 %% Write scalars
 for i=1:uf.nscalars
-    fprintf(fid, ' %12E                  ;-SCALAR, LABEL FOLLOWS:\n', uf.scalars(i).val);
+    fprintf(fid, ' % 12E                 ;-SCALAR, LABEL FOLLOWS:\n', uf.scalars(i).val);
     fprintf(fid, ' %-10.10s%-10.10s%-10.10s\n', uf.scalars(i).key, uf.scalars(i).desc, uf.scalars(i).unit);
 end
 
@@ -45,23 +45,23 @@ if uf.dim > 0
     end
     
     %% Write data
-    fprintf(fid, '  %12E %12E %12E %12E %12E %12E\n', uf.x);
+    fprintf(fid, ' % 12E% 12E% 12E% 12E% 12E% 12E\n', uf.x);
     if mod(uf.nx, 6) > 0
         fprintf(fid, '\n');
     end
     if uf.dim > 1
-        fprintf(fid, '  %12E %12E %12E %12E %12E %12E\n', uf.y);
+        fprintf(fid, ' % 12E% 12E% 12E% 12E% 12E% 12E\n', uf.y);
         if mod(uf.ny, 6) > 0
             fprintf(fid, '\n');
         end
     end
     if uf.dim > 2
-        fprintf(fid, '  %12E %12E %12E %12E %12E %12E\n', uf.z);
+        fprintf(fid, ' % 12E% 12E% 12E% 12E% 12E% 12E\n', uf.z);
         if mod(uf.ny, 6) > 0
             fprintf(fid, '\n');
         end
     end
-    fprintf(fid, '  %12E %12E %12E %12E %12E %12E\n', uf.f(:));
+    fprintf(fid, ' % 12E% 12E% 12E% 12E% 12E% 12E\n', uf.f(:));
     if mod(numel(uf.f), 6) > 0
         fprintf(fid, '\n');
     end
