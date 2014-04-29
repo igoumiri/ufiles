@@ -14,8 +14,9 @@ uf.shot = fscanf(fid, '%d', 1);
 uf.tokamak = fscanf(fid, '%4c', 1);
 uf.dim = fscanf(fid, '%d', 1);
 fgets(fid); % Discard end of line including comments
-uf.date = strtrim(fscanf(fid, ' %10[^\n]', 1));
-fgets(fid);
+% Date might be empty, make sure scanf doesn't go too far
+line = fgets(fid);
+uf.date = strtrim(sscanf(line, ' %10c', 1));
 uf.nscalars = fscanf(fid, '%d', 1);
 fgets(fid);
 
