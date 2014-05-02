@@ -31,7 +31,7 @@ if uf.dim > 0
         fprintf(fid, ' %-20.20s%-10.10s;-INDEPENDENT VARIABLE LABEL: Z-\n', uf.zlabel, uf.zunits);
     end
     fprintf(fid, ' %-20.20s%-10.10s;-DEPENDENT VARIABLE LABEL-\n', uf.flabel, uf.funits);
-    fprintf(fid, ' %1d                             ;-PROC CODE- 0:RAW 1:AVG 2:SM 3:AVG+SM\n', uf.proccessing);
+    fprintf(fid, ' %1d                             ;-PROC CODE- 0:RAW 1:AVG 2:SM 3:AVG+SM\n', uf.processing);
     fprintf(fid, ' %10d                    ;-# OF X PTS-', uf.nx);
     if uf.dim == 1
         fprintf(fid, ' X,F(X) DATA FOLLOW:\n');

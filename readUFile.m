@@ -56,7 +56,7 @@ if uf.dim > 0
     fgets(fid);
     
     %% Read processing mode
-    uf.proccessing = fscanf(fid, '%d', 1);
+    uf.processing = fscanf(fid, '%d', 1);
     fgets(fid);
     
     %% Read Number of points
