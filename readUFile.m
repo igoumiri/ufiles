@@ -17,7 +17,7 @@ fgets(fid); % Discard end of line including comments
 % Date might be empty, make sure scanf doesn't go too far
 line = fgets(fid);
 uf.date = strtrim(sscanf(line, ' %10c', 1));
-uf.nscalars = fscanf(fid, '%d', 1);
+nscalars = fscanf(fid, '%d', 1);
 fgets(fid);
 
 %% Error checks
@@ -26,7 +26,7 @@ if all(uf.dim ~= 0:3)
 end
 
 %% Read scalars
-for i=1:uf.nscalars
+for i=1:nscalars
     uf.scalars(i).val = fscanf(fid, '%f', 1);
     fgets(fid);
     uf.scalars(i).key = strtrim(fscanf(fid, ' %10[^\n]', 1));

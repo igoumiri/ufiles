@@ -15,7 +15,7 @@ fprintf(fid, ' %-10.10s                    ;-SHOT DATE-  UFILES ASCII FILE SYSTE
 fprintf(fid, ' %3d                           ;-NUMBER OF ASSOCIATED SCALAR QUANTITIES-\n', uf.nscalars);
 
 %% Write scalars
-for i=1:uf.nscalars
+for i=1:length(uf.scalars)
     fprintf(fid, ' % 10.4E                 ;-SCALAR, LABEL FOLLOWS:\n', uf.scalars(i).val);
     fprintf(fid, ' %-10.10s%-10.10s%-10.10s\n', uf.scalars(i).key, uf.scalars(i).desc, uf.scalars(i).unit);
 end
