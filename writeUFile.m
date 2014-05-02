@@ -69,6 +69,8 @@ if uf.dim > 0
 end
 
 %% Write comments
+% Even if the spec doesn't say so, this trailer record seems to be required
+fprintf(fid, ' ;----END-OF-DATA-----------------COMMENTS:-----------\n');
 fprintf(fid, uf.comments);
 
 %% Close file

@@ -90,7 +90,8 @@ if uf.dim > 0
 end
 
 %% Read Comments
-uf.comments = '';
+% Remove trailer record if present as it will be added back when writing
+uf.comments = fscanf(fid, ' ;----END-OF-DATA-----------------COMMENTS:-----------\n');
 while ~feof(fid)
     uf.comments = [uf.comments fgets(fid)];
 end
