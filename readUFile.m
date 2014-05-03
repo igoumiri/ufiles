@@ -26,6 +26,7 @@ if all(uf.dim ~= 0:3)
 end
 
 %% Read scalars
+uf.scalars = struct('val', {}, 'key', {}, 'desc', {}, 'unit', {});
 for i=1:nscalars
     uf.scalars(i).val = fscanf(fid, '%f', 1);
     fgets(fid);

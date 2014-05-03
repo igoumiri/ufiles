@@ -12,7 +12,7 @@ fid = fopen(filename, 'w');
 %% Write header
 fprintf(fid, ' %6d%-4.4s %1d 0 6              ;-SHOT #- F(X) DATA -UF2DWR- 19Nov2013 \n', uf.shot, uf.tokamak, uf.dim);
 fprintf(fid, ' %-10.10s                    ;-SHOT DATE-  UFILES ASCII FILE SYSTEM\n', uf.date);
-fprintf(fid, ' %3d                           ;-NUMBER OF ASSOCIATED SCALAR QUANTITIES-\n', uf.nscalars);
+fprintf(fid, ' %3d                           ;-NUMBER OF ASSOCIATED SCALAR QUANTITIES-\n', length(uf.scalars));
 
 %% Write scalars
 for i=1:length(uf.scalars)
